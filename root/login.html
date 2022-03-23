@@ -5,24 +5,24 @@
     <meta name="viewport" content="width=device-width">
     <title>replit</title>
     <link href="style.css" rel="stylesheet" type="text/css" />
-  	<script src="script.js" defer></script>
+  	<script src="login.js" defer></script>
   </head>
 
 	
-  <body onLoad="displayLogin()">
+  <body>
 
     <header>
-        <p id="loginLink">Login</p>
-        <p id="registerLink">Register</p>
+        <button id="loginLink">Login</button>
+        <button id="registerLink">Register</button>
     </header>
 
     <article>
         <div id="loginContainer">
             <h3>Login</h3>
             <form id="loginForm">
-                <input id="loginUsername" type="text">
-                <input id="loginPassword" type="password">
-                <button id="loginButton">Login</button>
+                <input id="loginUsername" type="text" placeholder="Username">
+                <input id="loginPassword" type="password" placeholder="Password">
+                <button id="loginButton" type="button">Login</button>
             </form>
         </div>
 
@@ -65,7 +65,7 @@
                     </select>
                 </p>
                 
-                <button id="submitRegistration">Submit</button>
+                <button id="submitRegistration" type="button">Submit</button>
             </form>
         </div>
     </article>

@@ -5,6 +5,10 @@ HTML, body {
 }
 
 /* Login.html Styles  */
+#registerContainer, #loginLink{
+	display: none;
+	
+}
 .registrationField {
 	margin: 10px 5px;
 	padding: 5px;
