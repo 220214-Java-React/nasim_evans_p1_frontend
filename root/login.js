@@ -19,7 +19,7 @@ if (loginButton) {
     loginButton.addEventListener("click", submitLogin)
 }
 
-
+// Display Controls
 function displayLogin() {
 	registerContainer.style.display = "none"
     loginContainer.style.display = "block"
@@ -36,9 +36,17 @@ function displayRegister() {
 	loginLink.style.display = "inline"
 }
 
+
+//Login Functionality
 function submitLogin() {
     console.log(`This users username: ${loginUsername.value}`)
     console.log(`This users password: ${loginPassword.value}`)
+	localStorage.setItem("username", loginUsername.value)
 	loginUsername.value = ""
 	loginPassword.value = ""
+	openHome()
+}
+
+let openHome = () => {
+    window.location.href = "C:/Users/Brett/IdeaProjects/project_1_frontend/root/home.html"
 }
