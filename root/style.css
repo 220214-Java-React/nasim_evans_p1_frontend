@@ -3,3 +3,20 @@ HTML, body {
 	padding: 0px;
 	border: 0px;
 }
+
+/* Login.html Styles  */
+#registerContainer, #loginLink{
+	display: none;
+	
+}
+.registrationField {
+	margin: 10px 5px;
+	padding: 5px;
+}
+.registrationField label {
+	display: inline-block;
+	width: 100px;
+}
+.registrationField input, .registrationField select{
+	width: 150px;
+}

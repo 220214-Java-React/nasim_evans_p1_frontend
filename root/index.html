@@ -5,12 +5,74 @@
     <meta name="viewport" content="width=device-width">
     <title>replit</title>
     <link href="style.css" rel="stylesheet" type="text/css" />
-  	<script src="script.js" defer></script>
+  	<script src="login.js" defer></script>
+    <script src="script.js" defer></script>
   </head>
 
 	
   <body>
-    Hello world
-    
+
+    <header>
+        <button id="loginLink">Login</button>
+        <button id="registerLink">Register</button>
+    </header>
+
+    <article>
+        <div id="loginContainer">
+            <h3>Login</h3>
+            <form id="loginForm">
+                <input id="loginUsername" type="text" placeholder="Username">
+                <input id="loginPassword" type="password" placeholder="Password">
+                <button id="loginButton" type="button">Login</button>
+            </form>
+        </div>
+
+        <div id="registerContainer">
+            <h3>Register</h3>
+            <form id="registerForm">
+                <p class="registrationField">
+                    <label for="firstNameRegistration" id="firstNameField">First Name:</label>
+                    <input type="text" id="firstNameRegistration" name="firstNameRegistration">
+                    <Label for="lastNameRegistration" id="lastNameField">Last Name:</Label>
+                    <input type="text" id="lastNameRegistration" name="lastNameRegistration"><br>
+                </p>
+
+                <p class="registrationField">
+                    <label for="emailRegistration" id="emailField">Email</label>
+                    <input type="text" id="emailRegistration" name="emailRegistration">
+                </p>
+
+                <p class="registrationField">
+                    <label for="usernameRegistration" id="usernameField">Username:</label>
+                    <input type="text" id="usernameRegistration" name="usernameRegistration">
+                </p>
+
+                <p class="registrationField">
+                    <label for="passwordRegistration" id="passwordField">Password:</label>
+                    <input type="password" id="passwordRegistration" name="passwordRegistration">
+                </p>
+
+                <p class="registrationField">
+                    <label for="retypedPasswordRegistration" id="password2Field">Retype Password:</label>
+                    <input type="password" id="retypedPasswordRegistration" name="retypedPasswordRegistration">
+                </p>
+
+                <p class="registrationField">
+                    <Label for="departmentRegistration" id="departmentField">Department:</Label>
+                    <select id="departmentRegistration">
+                        <option value="role1">Role 1</option>
+                        <option value="role2">Role 2</option>
+                        <option value="role3">Role 3</option>
+                    </select>
+                </p>
+                
+                <button id="submitRegistration" type="button">Submit</button>
+            </form>
+        </div>
+    </article>
+
+    <footer>
+    </footer>
+
   </body>
 </html>
