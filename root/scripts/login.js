@@ -22,8 +22,6 @@ if (loginButton) {
     loginButton.addEventListener("click", submitLogin)
 }
 
-
-
 // Display Controls
 function displayLogin() {
 	document.title = "Login"
