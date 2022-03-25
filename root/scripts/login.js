@@ -1,3 +1,6 @@
+
+
+//html elements
 let loginLink = document.getElementById("loginLink");
 let registerLink = document.getElementById("registerLink");
 
@@ -8,7 +11,7 @@ let loginUsername = document.getElementById("loginUsername")
 let loginPassword = document.getElementById("loginPassword")
 let loginButton = document.getElementById("loginButton")
 
-
+//Event Listeners
 if (loginLink) {
 	loginLink.addEventListener("click", displayLogin)
 }
@@ -19,8 +22,12 @@ if (loginButton) {
     loginButton.addEventListener("click", submitLogin)
 }
 
+
+
 // Display Controls
 function displayLogin() {
+	document.title = "Login"
+
 	registerContainer.style.display = "none"
     loginContainer.style.display = "block"
 
@@ -29,6 +36,8 @@ function displayLogin() {
 }
 
 function displayRegister() {
+	document.title = "Register"
+
 	loginContainer.style.display = "none"
     registerContainer.style.display = "block"
 	
@@ -36,17 +45,23 @@ function displayRegister() {
 	loginLink.style.display = "inline"
 }
 
-
 //Login Functionality
+
 function submitLogin() {
     console.log(`This users username: ${loginUsername.value}`)
     console.log(`This users password: ${loginPassword.value}`)
-	localStorage.setItem("username", loginUsername.value)
-	loginUsername.value = ""
-	loginPassword.value = ""
-	openHome()
+	if (loginUsername.value != "" && loginPassword.value != "") {
+		localStorage.setItem("currentUser", JSON.stringify(new User(loginUsername.value, loginPassword.value)))
+		console.log(localStorage.getItem("currentUser"))
+		openHome()
+	}
+	
 }
 
 let openHome = () => {
     window.location.href = "C:/Users/Brett/IdeaProjects/project_1_frontend/root/home.html"
 }
+
+
+
+

@@ -3,14 +3,24 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width">
-    <title>replit</title>
-    <link href="style.css" rel="stylesheet" type="text/css" />
-  	<script src="login.js" defer></script>
-    <script src="script.js" defer></script>
+    <title id="title">Login</title>
+    <link href="styles/style.css" rel="stylesheet" type="text/css" />
+    <script type="text/javascript" src="modules/user.js" defer></script>
+    <script type="text/javascript" src="scripts/login.js" defer></script>
   </head>
 
 	
   <body>
+    <script>
+        //clear local storage when index opens
+        
+	    if (localStorage.getItem("currentUser")) {
+		    console.log(localStorage.getItem("currentUser"))
+		    localStorage.removeItem("currentUser")
+		    console.log(localStorage.getItem("currentUser"))
+	    }
+        
+    </script>
 
     <header>
         <button id="loginLink">Login</button>
@@ -60,9 +70,9 @@
                 <p class="registrationField">
                     <Label for="departmentRegistration" id="departmentField">Department:</Label>
                     <select id="departmentRegistration">
-                        <option value="role1">Role 1</option>
-                        <option value="role2">Role 2</option>
-                        <option value="role3">Role 3</option>
+                        <option value="1">Admin</option>
+                        <option value="2">Financial Manager</option>
+                        <option value="3">Employee</option>
                     </select>
                 </p>
                 
