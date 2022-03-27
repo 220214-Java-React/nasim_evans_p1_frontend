@@ -7,15 +7,17 @@
     <link href="styles/style.css" rel="stylesheet" type="text/css" />
     <script type="text/javascript" src="modules/user.js" defer></script>
     <script type="text/javascript" src="scripts/login.js" defer></script>
+    
+  <!--Confirm -->
+    <script type="text/javascript" src="scripts/register.js" defer></script>
   </head>
 
+  
 	
   <body>
     <script>
         //clear local storage when index opens
-        
 	    if (localStorage.getItem("currentUser")) {
-		    console.log(localStorage.getItem("currentUser"))
 		    localStorage.removeItem("currentUser")
 		    console.log(localStorage.getItem("currentUser"))
 	    }
@@ -23,60 +25,71 @@
     </script>
 
     <header>
-        <button id="loginLink">Login</button>
-        <button id="registerLink">Register</button>
+        <p id="loginLink">Login</p>
+        <p id="registerLink">Register</p>
     </header>
 
     <article>
         <div id="loginContainer">
-            <h3>Login</h3>
+			
+			<div class="formTitle">
+            	<h3>Login</h3>
+			</div>
+			
             <form id="loginForm">
                 <input id="loginUsername" type="text" placeholder="Username">
                 <input id="loginPassword" type="password" placeholder="Password">
                 <button id="loginButton" type="button">Login</button>
             </form>
+			
         </div>
 
         <div id="registerContainer">
-            <h3>Register</h3>
-            <form id="registerForm">
-                <p class="registrationField">
+			
+			<div class="formTitle">
+            	<h3>Register</h3>
+			</div>
+			
+			<form id="registerForm">
+            
+				<p class="registrationField">
                     <label for="firstNameRegistration" id="firstNameField">First Name:</label>
                     <input type="text" id="firstNameRegistration" name="firstNameRegistration">
                     <Label for="lastNameRegistration" id="lastNameField">Last Name:</Label>
                     <input type="text" id="lastNameRegistration" name="lastNameRegistration"><br>
                 </p>
 
-                <p class="registrationField">
+                <p class="registrationField singleRField">
                     <label for="emailRegistration" id="emailField">Email</label>
                     <input type="text" id="emailRegistration" name="emailRegistration">
                 </p>
 
-                <p class="registrationField">
+                <p class="registrationField singleRField">
                     <label for="usernameRegistration" id="usernameField">Username:</label>
                     <input type="text" id="usernameRegistration" name="usernameRegistration">
                 </p>
 
-                <p class="registrationField">
+                <p class="registrationField singleRField">
                     <label for="passwordRegistration" id="passwordField">Password:</label>
                     <input type="password" id="passwordRegistration" name="passwordRegistration">
                 </p>
 
-                <p class="registrationField">
+                <p class="registrationField singleRField">
                     <label for="retypedPasswordRegistration" id="password2Field">Retype Password:</label>
                     <input type="password" id="retypedPasswordRegistration" name="retypedPasswordRegistration">
                 </p>
 
-                <p class="registrationField">
+                <p class="registrationField singleRField">
                     <Label for="departmentRegistration" id="departmentField">Department:</Label>
                     <select id="departmentRegistration">
                         <option value="1">Admin</option>
                         <option value="2">Financial Manager</option>
                         <option value="3">Employee</option>
                     </select>
+					
                 </p>
                 
-                <button id="submitRegistration" type="button">Submit</button>
+                <button id="submitRegistration" class=" singleRField" type="button">Submit</button>	
             </form>
         </div>
     </article>

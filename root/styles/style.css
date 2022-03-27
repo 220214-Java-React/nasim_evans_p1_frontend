@@ -1,22 +1,79 @@
+
+/* Zero out the browser */
 HTML, body {
 	margin: 0px;
 	padding: 0px;
 	border: 0px;
 }
 
-/* Login.html Styles  */
+/* css variables */
+:root {
+	--primaryColor:#000;
+	--supportingColor: #fff;
+	--attentionColor: #fff111;
+	--shadowColor: #B2BCAA;
+}
+
+/* intial index state needs to be set */
 #registerContainer, #loginLink{
-	display: none;
-	
+	display: none;	
 }
-.registrationField {
-	margin: 10px 5px;
-	padding: 5px;
+
+/* Universal Styles*/
+header {
+	display: flex;
+	justify-content: right;
+	padding: 10px 0px;
+	width: 100%;
+	background-color: var(--primaryColor);
+	color: var(--supportingColor);
 }
+header p {
+	margin-right: 20px;
+	text-decoration: underline var(--supportingColor);
+}
+
+article {
+	display: flex;
+	justify-content: center;
+}
+
+
+footer {
+/* 	ensure the footer sits on bottom of page */
+	position:absolute; 
+	bottom: 0;
+
+/*  give the empty footer some space to show it strech across full width of the page */
+	padding: 10px 0px;
+	width: 100%;
+	background-color: var(--primaryColor);
+}
+
+/* Index.html Styles  */
+#loginContainer, #registerContainer {
+	border: 2px solid var(--primaryColor);
+	border-radius: 15px;
+	box-shadow: 2px 3px var(--shadowColor);
+	margin-top: 50px;
+	padding: 10px;
+}
+
+.formTitle {
+	display: flex;
+	justify-content: center;
+	text-decoration: underline var(--primaryColor); 
+}
+
 .registrationField label {
 	display: inline-block;
 	width: 100px;
 }
-.registrationField input, .registrationField select{
+
+.registrationField input, .registrationField select {
 	width: 150px;
 }
+
+
+
+/* Home.html Styles */
