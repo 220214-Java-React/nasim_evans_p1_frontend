@@ -8,15 +8,17 @@ HTML, body {
 
 /* css variables */
 :root {
-	--primaryColor:#000;
-	--supportingColor: #fff;
-	--attentionColor: #fff111;
-	--shadowColor: #B2BCAA;
+	--primaryColor:#CCCCFF;
+	--supportingColor: #CBA1E1;
+	--attentionColor: #4A1C94;
+	--shadowColor: #B4B2D1;
+	--whiteColor: #E6E6FA;
 }
 
 /* intial index state needs to be set */
 #registerContainer, #loginLink{
-	display: none;	
+	display: none;
+	
 }
 
 /* Universal Styles*/
@@ -25,12 +27,15 @@ header {
 	justify-content: right;
 	padding: 10px 0px;
 	width: 100%;
-	background-color: var(--primaryColor);
-	color: var(--supportingColor);
+	background-color: var(--attentionColor);
+	color: var(--attentionColor);
 }
 header p {
 	margin-right: 20px;
-	text-decoration: underline var(--supportingColor);
+	padding: 5px 7px;
+	border-radius: 15px;
+	background-color: var(--whiteColor);
+	text-decoration: underline var(--primaryColor);
 }
 
 article {
@@ -45,16 +50,17 @@ footer {
 	bottom: 0;
 
 /*  give the empty footer some space to show it strech across full width of the page */
-	padding: 10px 0px;
+	padding: 20px 0px;
 	width: 100%;
-	background-color: var(--primaryColor);
+	background-color: var(--attentionColor);
+	color: var(--supportingColor);
 }
 
 /* Index.html Styles  */
 #loginContainer, #registerContainer {
 	border: 2px solid var(--primaryColor);
 	border-radius: 15px;
-	box-shadow: 2px 3px var(--shadowColor);
+	box-shadow: 5px 3px var(--shadowColor);
 	margin-top: 50px;
 	padding: 10px;
 }

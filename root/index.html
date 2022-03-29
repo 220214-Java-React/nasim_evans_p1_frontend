@@ -7,8 +7,6 @@
     <link href="styles/style.css" rel="stylesheet" type="text/css" />
     <script type="text/javascript" src="modules/user.js" defer></script>
     <script type="text/javascript" src="scripts/login.js" defer></script>
-    
-  <!--Confirm -->
     <script type="text/javascript" src="scripts/register.js" defer></script>
   </head>
 
@@ -17,7 +15,9 @@
   <body>
     <script>
         //clear local storage when index opens
+        
 	    if (localStorage.getItem("currentUser")) {
+		    console.log(localStorage.getItem("currentUser"))
 		    localStorage.removeItem("currentUser")
 		    console.log(localStorage.getItem("currentUser"))
 	    }
@@ -39,7 +39,7 @@
             <form id="loginForm">
                 <input id="loginUsername" type="text" placeholder="Username">
                 <input id="loginPassword" type="password" placeholder="Password">
-                <button id="loginButton" type="button">Login</button>
+                <button id="loginButton" type="button" >Login</button>
             </form>
 			
         </div>
