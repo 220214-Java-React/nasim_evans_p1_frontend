@@ -10,7 +10,7 @@ if (submitRegistration) {
 }
 
 //Register Functionality
-function submitRegister() {
+async function submitRegister() {
     console.log(`This users first name: ${firstNameRegistration.value}`)
     console.log(`This users last name: ${lastNameRegistration.value}`)
     console.log(`This users email: ${emailRegistration.value}`)
@@ -29,18 +29,15 @@ function submitRegister() {
 	&& ((passwordRegistration.value != "") === (retypedPasswordRegistration.value != ""
 	&& departmentRegistration.value != ""))) {
 		
-    	localStorage.setItem("currentRegisteredUser", 
-        JSON.stringify(new RegisteredUser(firstNameRegistration.value, 
-                                          lastNameRegistration.value, 
-                                          emailRegistration.value, 
-                                          usernameRegistration.value, 
-                                          passwordRegistration.value, 
-                                          departmentRegistration.value)))
-		
-        console.log(localStorage.getItem("currentRegisteredUser"))
-	  }
+        let user = new User(0, usernameRegistration.value, passwordRegistration.value, emailRegistration.value, firstNameRegistration.value, lastNameRegistration.value, false,departmentRegistration.value)
+
+        await fetch(`${BASE_API_URL}/create`, { method: "POST", body: JSON.stringify(user) })
+        .then(console.log("User has been created: please await aprroval from an admin"))
+        
+	}
 	
 }
+
 
 
 //id="firstNameRegistration"

@@ -1,4 +1,4 @@
-
+const BASE_API_URL = "http://localhost:8080/project_1_backend"
 
 //html elements
 let loginLink = document.getElementById("loginLink");
@@ -11,6 +11,8 @@ let loginUsername = document.getElementById("loginUsername")
 let loginPassword = document.getElementById("loginPassword")
 let loginButton = document.getElementById("loginButton")
 
+let incorrectCredentials = document.getElementById("incorrectLoginValues")
+
 //Event Listeners
 if (loginLink) {
 	loginLink.addEventListener("click", displayLogin)
@@ -20,6 +22,11 @@ if (registerLink) {
 }
 if (loginButton) {
     loginButton.addEventListener("click", submitLogin)
+	loginButton.addEventListener("keyup", (event) => {
+		if (KeyboardEvent.key == "enter") {
+			submitLogin()
+		}
+	})
 }
 
 // Display Controls
@@ -45,15 +52,29 @@ function displayRegister() {
 
 //Login Functionality
 
-function submitLogin() {
+async function submitLogin() {
     console.log(`This users username: ${loginUsername.value}`)
     console.log(`This users password: ${loginPassword.value}`)
 	if (loginUsername.value != "" && loginPassword.value != "") {
-		localStorage.setItem("currentUser", JSON.stringify(new User(loginUsername.value, loginPassword.value)))
-		console.log(localStorage.getItem("currentUser"))
-		openHome()
+		let user = new User(0, loginUsername.value, loginPassword.value, "", "", "", false, "EMPTY") 
+		let reqJson = JSON.stringify(user)
+		
+		console.log(user)
+
+		await fetch(`${BASE_API_URL}/login`, {
+			method: "POST",
+			body: reqJson, })
+		.then(response => response.json())
+		.then(data => finishLogin(data))
+		.catch(incorrectLogin())
+
+		console.log(`The Current User is: ${localStorage.getItem("currentUser")}`)
 	}
 	
+}
+
+function incorrectLogin() {
+	console.log("login failed: ")
 }
 
 let openHome = () => {

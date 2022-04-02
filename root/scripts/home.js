@@ -2,7 +2,8 @@
 //Get Current User From Local Storage
     //parse the currentUser JSON down to its elements
     //Instantiate Active User with those elements
-let {username, password} = JSON.parse(localStorage.getItem("currentUser"))
-let activeUser = new User(username, password)
+console.log(`The Current User is: ${localStorage.getItem("currentUser")}`)
+let {userId, username, password, email, firstName, lastName, active, role} = JSON.parse(localStorage.getItem("currentUser"))
+let activeUser = new User(userId, username, password, email, firstName, lastName, active, role)
 
-console.log(activeUser)
+console.log( "The Active user is " = activeUser)
