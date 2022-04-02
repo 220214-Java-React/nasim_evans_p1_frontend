@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width">
     <title id="title">Login</title>
     <link href="styles/style.css" rel="stylesheet" type="text/css" />
-    <script type="text/javascript" src="modules/user.js" defer></script>
+    <script type="text/javascript" src="modules/user.js"></script>
     <script type="text/javascript" src="scripts/login.js" defer></script>
     <script type="text/javascript" src="scripts/register.js" defer></script>
   </head>
@@ -13,45 +13,37 @@
   
 	
   <body>
-    <script>
-        //clear local storage when index opens
-        
-	    if (localStorage.getItem("currentUser")) {
-		    console.log(localStorage.getItem("currentUser"))
-		    localStorage.removeItem("currentUser")
-		    console.log(localStorage.getItem("currentUser"))
-	    }
-        
-    </script>
 
-    <header>
+    <header id="indexHeader">
         <p id="loginLink">Login</p>
         <p id="registerLink">Register</p>
     </header>
 
     <article>
         <div id="loginContainer">
-			
+			<div id="incorrectLoginValues"></div>
+
 			<div class="formTitle">
             	<h3>Login</h3>
 			</div>
 			
-            <form id="loginForm">
-                <input id="loginUsername" type="text" placeholder="Username">
-                <input id="loginPassword" type="password" placeholder="Password">
+            <form id="loginForm" onload="clearUser()">
+                <input id="loginUsername" name="username" type="text" placeholder="Username">
+                <input id="loginPassword" name="password" type="password" placeholder="Password">
                 <button id="loginButton" type="button" >Login</button>
             </form>
 			
         </div>
 
         <div id="registerContainer">
+			<div id="incorrectRegisterValues"></div>
 			
-			<div class="formTitle">
+            <div class="formTitle">
             	<h3>Register</h3>
 			</div>
 			
 			<form id="registerForm">
-            
+                
 				<p class="registrationField">
                     <label for="firstNameRegistration" id="firstNameField">First Name:</label>
                     <input type="text" id="firstNameRegistration" name="firstNameRegistration">
@@ -82,9 +74,9 @@
                 <p class="registrationField singleRField">
                     <Label for="departmentRegistration" id="departmentField">Department:</Label>
                     <select id="departmentRegistration">
-                        <option value="1">Admin</option>
-                        <option value="2">Financial Manager</option>
-                        <option value="3">Employee</option>
+                        <option value="ADMIN">Admin</option>
+                        <option value="FINANCIALMANAGER">Financial Manager</option>
+                        <option value="EMPLOYEE">Employee</option>
                     </select>
 					
                 </p>
@@ -95,6 +87,7 @@
     </article>
 
     <footer>
+        <p>Created By Brett Evans and Jazib Nasim</p>
     </footer>
 
   </body>

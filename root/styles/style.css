@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:ital@0;1&family=Quicksand&family=Space+Mono&family=Work+Sans:wght@400;500;800&display=swap');
+
 
 /* Zero out the browser */
 HTML, body {
@@ -24,12 +26,18 @@ HTML, body {
 /* Universal Styles*/
 header {
 	display: flex;
-	justify-content: right;
+	justify-content: space-between;
 	padding: 10px 0px;
 	width: 100%;
 	background-color: var(--attentionColor);
 	color: var(--attentionColor);
+  
 }
+
+ #indexHeader {
+	justify-content: right;
+}
+
 header p {
 	margin-right: 20px;
 	padding: 5px 7px;
@@ -83,3 +91,73 @@ footer {
 
 
 /* Home.html Styles */
+
+#returnHome{
+  display: flex;
+  justify-content: space-between;
+   
+}
+
+
+#table-container {
+	margin-top: 15px;
+	border-radius: 15px;
+	border: 2px solid #CCCCFF;
+	box-shadow: 5px 3px var(--shadowColor);
+  
+	
+}
+
+.styled-table {
+    font-size: 0.9em;
+    font-family: quicksand, sans-serif;
+    min-width: 400px;
+    
+    
+}
+
+/* nth-child(#) gets one element at the specified index (1 begin the first) */
+.styled-table th:nth-child(1) {
+	border-radius: 15px 0 0 0;
+ 
+}
+
+/* nth-last-child(#) gets one element at the specified index (1 begin the last)  (counts down)*/
+.styled-table th:nth-last-child(1) {
+	border-radius: 0 15px 0 0;
+}
+
+.styled-table thead tr {
+    background-color: #CCCCFF;
+    color: #ffffff;
+    text-align: left;
+}
+
+.styled-table th,
+.styled-table td {
+    padding: 12px 15px;
+}
+
+.styled-table tbody tr {
+    border-bottom: thin solid #dddddd;
+  
+}
+
+.styled-table tbody tr:nth-of-type(even) {
+    background-color: #f3f3f3;
+}
+
+.styled-table tbody tr:last-of-type {
+    border-bottom: 2px solid #4A1C94;
+}
+
+.styled-table tbody tr.active-row {
+    font-weight: bold;
+    color: #CBA1E1;
+}
+
+#homeButtonDiv {
+
+  position: relative;
+  justify-self: center;
+}
