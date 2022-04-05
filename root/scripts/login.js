@@ -1,4 +1,4 @@
-const BASE_API_URL = "http://localhost:8080/project_1_backend"
+const BASE_API_URL = "http://localhost:8180/project_1_backend"
 
 //html elements
 let loginLink = document.getElementById("loginLink");
@@ -22,11 +22,6 @@ if (registerLink) {
 }
 if (loginButton) {
     loginButton.addEventListener("click", submitLogin)
-	loginButton.addEventListener("keyup", (event) => {
-		if (KeyboardEvent.key == "enter") {
-			submitLogin()
-		}
-	})
 }
 
 // Display Controls
@@ -66,9 +61,15 @@ async function submitLogin() {
 			body: reqJson, })
 		.then(response => response.json())
 		.then(data => finishLogin(data))
-		.catch(incorrectLogin())
+		
 
-		console.log(`The Current User is: ${localStorage.getItem("currentUser")}`)
+		user = localStorage.getItem("currentUser")
+		console.log(`The Current User is: ${user}`)
+		if (localStorage.getItem("currentUser") != null && user.active == true) {
+			openHome()
+		}else {
+			"login failed: incorrect credentials"	
+		}
 	}
 	
 }
@@ -78,7 +79,7 @@ function incorrectLogin() {
 }
 
 let openHome = () => {
-    window.location.href = "C:/Users/Brett/IdeaProjects/project_1_frontend/root/home.html"
+    window.location.href = "https://expensereimburcementsystem.brette.repl.co/home.html"
 }
 
 
