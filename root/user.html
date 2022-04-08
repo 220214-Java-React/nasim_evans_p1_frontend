@@ -5,68 +5,74 @@
     <meta name="viewport" content="width=device-width">
     <title>Expense Reimburcement System</title>
     <link href="styles/style.css" rel="stylesheet" type="text/css" />
-    
-    <script type="text/javascript" src="modules/user.js" defer></script>
-    <script type="text/javascript" src="scripts/home.js" defer></script>
-    
+
+		
+    <script type="text/javascript" src="modules/url.js"></script>
+    <script type="text/javascript" src="modules/user.js"></script>
 
   </head>
 
 	
   <body>
     <header>
-      
-     
       <a  href="home.html"><p id="returnHome">Return Home</p> </a>
-     
-      
+		
       <a id="loginPage" href="index.html"><p>Sign out</p></a>
-
-     
     </header>
-    <article>
-		<div id="table-container">
-  			<table class="styled-table">
-    			<thead>
-        			<tr>
-                  <th>User ID</th>
-            			<th>Username</th>
-            			<th>User Role</th>
-            			<th>Status</th>
-        			</tr>
-    			</thead>
-        
+    
+		<article>
+<!--{"userId":22,
+			"username":"mainAd",
+			"password":"$2a$04$MBLhOFSiXQD/ZSHfbCz.Zey9/eM5eOXUTToMnLCs5FOgB3WoTomUW",
+			"email":"main@admin.inc","
+			firstName":"bruce",
+			"lastName":"wayne",
+			"active":true,"
+			role":"ADMIN"}  -->
       
-    			<tbody>
-    				<tr>
-          				<td>admin1</td>
-          				<td>admin</td>
-          				<td>password</td>
-        			</tr>
-        			<tr>
-          				<td>1</td>
-          				<td>admin1</td>
-          				<td>password</td>
-        			</tr>
-      				<tr>
-          				<td>1</td>
-          				<td>admin1</td>
-          				<td>password</td>
-        			</tr>
-    			</tbody>
-          
-			</table>
+			<div id="userContainer">
+				<div></div>
 
-       
-		</div>
-      
-    </article>
+				<h3>Hello, <span id="name"></span></h3>
+				<p>Username : <span id="username"></span></p>
+				<p>Email : <span id="email"></span></p>
+				<p>Role : <span id="role"></span></p>
 
-    <div id="homeButtonDiv">
-    <button id="homeButton">Resolve</button>
-    </div>
+				<div id="adminControls">
+					<select id="adminSelection">
+						<option value='ia'>Inactive</option>
+						<option value='a'>Active</option>
+					</select>
+					<button id="adminSubmit" type="button">Update</button>
+				</div>
+				
+			</div>
+
+    
+  	</article>
+    <script>
+			window.onload = displayUser()	
+		</script>
    
       
-    <footer></footer>
+    <footer>
+			<div id=footerDiv>
+				<p>Created By Brett Evans and Jazib Nasim</p>	
+			</div>
+    </footer
   </body>
+
+
+
+
+
+
+
+  
+
+
+
+  
 </html>
+
+

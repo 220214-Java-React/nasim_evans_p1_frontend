@@ -1,4 +1,4 @@
-const BASE_API_URL = "http://localhost:8080/project_1_backend"
+
 
 //html elements
 let loginLink = document.getElementById("loginLink");
@@ -22,11 +22,8 @@ if (registerLink) {
 }
 if (loginButton) {
     loginButton.addEventListener("click", submitLogin)
-	loginButton.addEventListener("keyup", (event) => {
-		if (KeyboardEvent.key == "enter") {
-			submitLogin()
-		}
-	})
+}else{
+	console.log("slowdown")
 }
 
 // Display Controls
@@ -34,7 +31,7 @@ function displayLogin() {
 	document.title = "Login"
 
 	registerContainer.style.display = "none"
-    loginContainer.style.display = "block"
+  loginContainer.style.display = "block"
 
 	loginLink.style.display = "none"
 	registerLink.style.display = "inline"
@@ -61,25 +58,38 @@ async function submitLogin() {
 		
 		console.log(user)
 
-		await fetch(`${BASE_API_URL}/login`, {
+		try {
+			await fetch(`${BASE_API_URL}/login`, {
 			method: "POST",
-			body: reqJson, })
-		.then(response => response.json())
-		.then(data => finishLogin(data))
-		.catch(incorrectLogin())
-
-		console.log(`The Current User is: ${localStorage.getItem("currentUser")}`)
+			body: reqJson, 
+			})
+			.then(response => response.json())
+			.then(data => finishLogin(data))
+		} catch(e) {
+			incorrectLogin("invaild Credentials")
+		}
+		
+		
+		user = localStorage.getItem("currentUser")
+		console.log(`The Current User is: ${user}`)
+		if (localStorage.getItem("currentUser") != null && user.active == true) {
+			openHome()
+		}else {}
 	}
 	
 }
 
-function incorrectLogin() {
+
+
+function incorrectLogin(string) {
 	console.log("login failed: ")
+	let incorrectLoginValues = document.getElementById("incorrectLoginValues")
+	let p = document.createElement("p")
+	p.innerHTML = string
+	incorrectLoginValues.appendChild(p)
 }
 
-let openHome = () => {
-    window.location.href = "C:/Users/Brett/IdeaProjects/project_1_frontend/root/home.html"
-}
+
 
 
 

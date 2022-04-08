@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width">
     <title id="title">Login</title>
     <link href="styles/style.css" rel="stylesheet" type="text/css" />
+
+		<script type="text/javascript" src="modules/url.js"></script>
     <script type="text/javascript" src="modules/user.js"></script>
     <script type="text/javascript" src="scripts/login.js" defer></script>
     <script type="text/javascript" src="scripts/register.js" defer></script>
@@ -16,14 +18,20 @@
 
     <header id="indexHeader">
         <p id="loginLink">Login</p>
+		
         <p id="registerLink">Register</p>
     </header>
-
+	
     <article>
         <div id="loginContainer">
+			
 			<div id="incorrectLoginValues"></div>
-
+			<div id="title">
+				<h3 color = "white">Company Name : <span><em><strong>Reimbursement System</strong></em></span></h3>
+			</div>
+			
 			<div class="formTitle">
+				
             	<h3>Login</h3>
 			</div>
 			
@@ -36,49 +44,51 @@
         </div>
 
         <div id="registerContainer">
-			<div id="incorrectRegisterValues"></div>
+						<div id="incorrectRegisterValues"></div>
 			
             <div class="formTitle">
             	<h3>Register</h3>
-			</div>
+						</div>
 			
-			<form id="registerForm">
+						<form id="registerForm">
                 
-				<p class="registrationField">
+								<p class="registrationField">
                     <label for="firstNameRegistration" id="firstNameField">First Name:</label>
                     <input type="text" id="firstNameRegistration" name="firstNameRegistration">
-                    <Label for="lastNameRegistration" id="lastNameField">Last Name:</Label>
+                </p>
+				
+								<p class="registrationField">
+										<Label for="lastNameRegistration" id="lastNameField">Last Name:</Label>
                     <input type="text" id="lastNameRegistration" name="lastNameRegistration"><br>
-                </p>
+								</p>
 
-                <p class="registrationField singleRField">
+                <p class="registrationField">
                     <label for="emailRegistration" id="emailField">Email</label>
-                    <input type="text" id="emailRegistration" name="emailRegistration">
+                    <input type="email" id="emailRegistration" name="emailRegistration">
                 </p>
 
-                <p class="registrationField singleRField">
+                <p class="registrationField">
                     <label for="usernameRegistration" id="usernameField">Username:</label>
                     <input type="text" id="usernameRegistration" name="usernameRegistration">
                 </p>
 
-                <p class="registrationField singleRField">
+                <p class="registrationField">
                     <label for="passwordRegistration" id="passwordField">Password:</label>
                     <input type="password" id="passwordRegistration" name="passwordRegistration">
                 </p>
 
-                <p class="registrationField singleRField">
+                <p class="registrationField">
                     <label for="retypedPasswordRegistration" id="password2Field">Retype Password:</label>
                     <input type="password" id="retypedPasswordRegistration" name="retypedPasswordRegistration">
                 </p>
 
-                <p class="registrationField singleRField">
+                <p class="registrationField">
                     <Label for="departmentRegistration" id="departmentField">Department:</Label>
                     <select id="departmentRegistration">
                         <option value="ADMIN">Admin</option>
                         <option value="FINANCIALMANAGER">Financial Manager</option>
                         <option value="EMPLOYEE">Employee</option>
                     </select>
-					
                 </p>
                 
                 <button id="submitRegistration" class=" singleRField" type="button">Submit</button>	
@@ -87,8 +97,12 @@
     </article>
 
     <footer>
-        <p>Created By Brett Evans and Jazib Nasim</p>
+		
+			<span>Created By Brett Evans and Jazib Nasim</span>	
+		
     </footer>
 
   </body>
+
+  
 </html>

@@ -18,7 +18,7 @@ HTML, body {
 }
 
 /* intial index state needs to be set */
-#registerContainer, #loginLink{
+#registerContainer, #loginLink, #table-container, #newReimb, #managerControls, #btnContainer{
 	display: none;
 	
 }
@@ -46,26 +46,29 @@ header p {
 	text-decoration: underline var(--primaryColor);
 }
 
-article {
+article, #title {
 	display: flex;
 	justify-content: center;
 }
 
 
 footer {
-/* 	ensure the footer sits on bottom of page */
-	position:absolute; 
-	bottom: 0;
-
-/*  give the empty footer some space to show it strech across full width of the page */
-	padding: 20px 0px;
-	width: 100%;
-	background-color: var(--attentionColor);
+  position: fixed;
+  bottom: -20px;
+  width: 100%;
+  height: 2.5rem; 
+  background-color: var(--attentionColor);
 	color: var(--supportingColor);
+	padding-top: 15px;
 }
 
+#footerDiv{ 
+	
+}
+
+
 /* Index.html Styles  */
-#loginContainer, #registerContainer {
+#loginContainer, #registerContainer, #userFormContainer, #reimbursementFormContainer {
 	border: 2px solid var(--primaryColor);
 	border-radius: 15px;
 	box-shadow: 5px 3px var(--shadowColor);
@@ -79,14 +82,35 @@ footer {
 	text-decoration: underline var(--primaryColor); 
 }
 
-.registrationField label {
+/* .registrationField label, #reimbursementFormContainer label, #userFormContainer label {
 	display: inline-block;
 	width: 100px;
+} */
+
+input[type=text], select, input[type=password],input[type=number],input[type=email] {
+  width: 100%;
+  padding: 5px 10px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
 }
 
-.registrationField input, .registrationField select {
-	width: 150px;
+#submitRegistration, #loginButton {
+  width: 100%;
+  background-color: #4A1C94;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 15px;
+  cursor: pointer;
 }
+
+/* .registrationField input, .registrationField select, #userFormContainer input, #userFormContainer select, #reimbursementFormContainer input, #reimbursementFormContainer select {
+	width: 150px;
+} */
 
 
 
@@ -98,28 +122,46 @@ footer {
    
 }
 
+#homeArticle {
+	margin: auto;
+	width: 75%;
+	flex-direction: column;
+}
+
+#tableControls{
+	margin: 25px 0;
+	display: flex;
+	justify-content: space-around;
+}
+
+#tableControls button {
+	width: 150px;
+	border-radius: 25px;
+}
 
 #table-container {
-	margin-top: 15px;
+/* 	display:flex; */
+	justify-content: center;
+	height: 500px;
+	padding-top: 25px;
+	padding-bottom: 25px;
+	margin-top: 35px;
 	border-radius: 15px;
 	border: 2px solid #CCCCFF;
 	box-shadow: 5px 3px var(--shadowColor);
-  
-	
+	overflow: scroll;
 }
 
 .styled-table {
-    font-size: 0.9em;
-    font-family: quicksand, sans-serif;
-    min-width: 400px;
-    
-    
+	margin 10px;
+  font-size: 0.9em;
+  font-family: quicksand, sans-serif;
+  min-width: 400px;
 }
 
 /* nth-child(#) gets one element at the specified index (1 begin the first) */
 .styled-table th:nth-child(1) {
 	border-radius: 15px 0 0 0;
- 
 }
 
 /* nth-last-child(#) gets one element at the specified index (1 begin the last)  (counts down)*/
@@ -136,6 +178,7 @@ footer {
 .styled-table th,
 .styled-table td {
     padding: 12px 15px;
+		width: 100px;
 }
 
 .styled-table tbody tr {
@@ -143,9 +186,9 @@ footer {
   
 }
 
-.styled-table tbody tr:nth-of-type(even) {
+/* .styled-table tbody tr:nth-of-type(even) {
     background-color: #f3f3f3;
-}
+} */
 
 .styled-table tbody tr:last-of-type {
     border-bottom: 2px solid #4A1C94;
@@ -156,8 +199,33 @@ footer {
     color: #CBA1E1;
 }
 
-#homeButtonDiv {
-
-  position: relative;
-  justify-self: center;
+#btnContainer {
+	width: 40%;
+	display: flex;
+	justify-content: center;
+	
 }
+
+
+/* borrowed code  */
+td {
+  border: 2px solid #ccd2ff;
+  position: relative;
+}
+
+tr:hover,
+tr:focus-within {
+  background: #CBA1E1;
+  outline: none;
+}
+
+td > a:first-child {
+  display: flex;
+  padding: 18px;
+  text-decoration: none;
+  color: inherit;
+  z-index: 0;
+
+  &:focus {
+    outline: 0;
+  }

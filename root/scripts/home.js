@@ -1,9 +1,40 @@
 
-//Get Current User From Local Storage
-    //parse the currentUser JSON down to its elements
-    //Instantiate Active User with those elements
+// Get Current User From Local Storage
+//     parse the currentUser JSON down to its elements
+//     Instantiate Active User with those elements
 console.log(`The Current User is: ${localStorage.getItem("currentUser")}`)
-let {userId, username, password, email, firstName, lastName, active, role} = JSON.parse(localStorage.getItem("currentUser"))
-let activeUser = new User(userId, username, password, email, firstName, lastName, active, role)
+let currentUser
+currentUser = JSON.parse(localStorage.getItem("currentUser"))
+	
 
-console.log( "The Active user is " = activeUser)
+if (currentUser.role == "EMPLOYEE") {
+	let btn = document.getElementById("btnContainer")
+	btn.style.display = "block"
+}
+
+console.log( "The Active user is " + currentUser)
+
+function displayBtn() {
+		if (currentUser.role == "EMPLOYEE") {
+		let reimbursementBtn = document.getElementById("reimbBtn")		
+		reimbursementBtn.style.display = "block"
+	}else {
+		let reimbursementBtn = document.getElementById("reimbBtn")		
+		reimbursementBtn.style.display = "none"
+	}	
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

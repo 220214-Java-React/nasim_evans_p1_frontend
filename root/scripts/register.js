@@ -1,9 +1,7 @@
 
-//Construction Ahead!
-// WORK IN PROGRESS - JAZZ
 
 
-
+let submitRegistration = document.getElementById("submitRegistration")
 //Event Listeners
 if (submitRegistration) {
     submitRegistration.addEventListener("click", submitRegister)
@@ -25,14 +23,16 @@ async function submitRegister() {
     console.log(`This users department: ${departmentRegistration.value}`)
   
 	if (firstNameRegistration.value != "" && lastNameRegistration.value != "" 
-    && emailRegistration.value != "" && usernameRegistration.value != ""
-	&& ((passwordRegistration.value != "") === (retypedPasswordRegistration.value != ""
-	&& departmentRegistration.value != ""))) {
+  	&& emailRegistration.value != "" && usernameRegistration.value != ""
+		&& ((passwordRegistration.value != "") === (retypedPasswordRegistration.value != ""
+		&& departmentRegistration.value != ""))) {
 		
-        let user = new User(0, usernameRegistration.value, passwordRegistration.value, emailRegistration.value, firstNameRegistration.value, lastNameRegistration.value, false,departmentRegistration.value)
+        let user = new User(0, usernameRegistration.value, passwordRegistration.value, emailRegistration.value, firstNameRegistration.value, lastNameRegistration.value, true,departmentRegistration.value)
 
         await fetch(`${BASE_API_URL}/create`, { method: "POST", body: JSON.stringify(user) })
         .then(console.log("User has been created: please await aprroval from an admin"))
+
+				openIndex()
         
 	}
 	

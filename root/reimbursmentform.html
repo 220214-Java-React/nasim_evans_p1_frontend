@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Expense Reimburcement System</title>
+    <link href="styles/style.css" rel="stylesheet" type="text/css" />
+
+	<script type="text/javascript" src="modules/url.js"></script>
+    <script type="text/javascript" src="modules/user.js" ></script>
+    <script type="text/javascript" src="scripts/home.js" defer></script>
+	<script type="text/javascript" src="scripts/reimbursement.js" defer></script>
+  </head>
+
+	
+  <body>
+    <header>
+      <a href="home.html"><p id="returnHome">Return Home</p> </a>
+		
+      <a id="loginPage" href="index.html"><p>Sign out</p></a>
+    </header>
+
+		
+    <article>
+			<div id="reimbursementFormContainer">
+      	<div class="formTitle">
+            	<h3>Reimbursement Icon</h3>
+				</div>
+      
+        <form>
+          
+          <label for="reimbFormAmount">Amount</label>
+          <input id = "reimbursementFormAmount" name="reimbFormAmount" type="number" min="0.01" step="0.01">
+			
+          <label for="reimbFormDescription">description</label>
+          <div>
+						<textarea id="reimbursementFormDescription" name="reimbFormDescription" type="text" rows="2" cols="50"></textarea>
+					</div>
+					
+          <Label for="reimbFormType">Type:</Label>
+          <select id="reimbursementFormType" name="reimbFormType">
+            <option value="LODGING">Lodging</option>
+            <option value="TRAVEL">Travel</option>
+            <option value="FOOD">Food</option>
+						<option value="OTHER">Other</option>
+          </select>
+
+					<button id="submitReimbRequest" onclick="createReimbursement()" type="button" >submit</button>
+        </form>
+      
+  			
+			</div>
+
+    </article>
+
+    <footer>
+			<div id=footerDiv>
+				<p>Created By Brett Evans and Jazib Nasim</p>	
+			</div>
+    </footer
+  </body>
+
+</html>
