@@ -54,23 +54,18 @@ article {
 
 footer {
 /* 	ensure the footer sits on bottom of page */
-	position: absolute;
-	bottom: 0px;
-	width: 100%;
-/*  give the empty footer some space to show it strech across full width of the page */
-	
-}
+	position:absolute; 
+	bottom: 0;
 
-#footerDiv{ 
-	margin-top: 30px;
-	padding-top: 20px;
-	padding-bottom: 1px;
+/*  give the empty footer some space to show it strech across full width of the page */
+	padding: 20px 0px;
+	width: 100%;
 	background-color: var(--attentionColor);
 	color: var(--supportingColor);
 }
 
 /* Index.html Styles  */
-#loginContainer, #registerContainer, #userFormContainer, #reimbursementFormContainer {
+#loginContainer, #registerContainer {
 	border: 2px solid var(--primaryColor);
 	border-radius: 15px;
 	box-shadow: 5px 3px var(--shadowColor);
@@ -84,12 +79,12 @@ footer {
 	text-decoration: underline var(--primaryColor); 
 }
 
-.registrationField label, #reimbursementFormContainer label, #userFormContainer label {
+.registrationField label {
 	display: inline-block;
 	width: 100px;
 }
 
-.registrationField input, .registrationField select, #userFormContainer input, #userFormContainer select, #reimbursementFormContainer input, #reimbursementFormContainer select {
+.registrationField input, .registrationField select {
 	width: 150px;
 }
 
@@ -103,28 +98,9 @@ footer {
    
 }
 
-#homeArticle {
-	margin: auto;
-	width: 75%;
-	flex-direction: column;
-}
-
-#tableControls{
-	margin: 25px 0;
-	display: flex;
-	justify-content: space-around;
-}
-
-#tableControls button {
-	width: 150px;
-	border-radius: 25px;
-}
-#tableControls button:hover, #tableControls button:active {
-	
-}
 
 #table-container {
-	margin-top: 35px;
+	margin-top: 15px;
 	border-radius: 15px;
 	border: 2px solid #CCCCFF;
 	box-shadow: 5px 3px var(--shadowColor);
@@ -179,7 +155,9 @@ footer {
     font-weight: bold;
     color: #CBA1E1;
 }
-/* media query */
-/* @media screen and (max-width: 480px) {
 
-} */
+#homeButtonDiv {
+
+  position: relative;
+  justify-self: center;
+}
